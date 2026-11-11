@@ -1,35 +1,29 @@
-# Visual Prompt Library · Codex 出图模板库
+# Visual Prompt Library · AI 出图模板库
 
-在 Codex 里把视觉参考变成可重复调用的 GPT 图片工作流。收录 **31 套出图模板**。按自媒体内容、个人形象、电商与品牌、插画与短剧查找。自媒体进一步细分为小红书竖封、公众号／视频封面和账号横幅。每套都有可复制的调用示例。
+把视觉参考变成可复用的图片提示词和出图流程。收录 **31 套出图模板**。按自媒体内容、个人形象、电商与品牌、插画与短剧查找。自媒体进一步细分为小红书竖封、公众号／视频封面和账号横幅。每套都有可复制的调用示例。
 
 ## 安装
 
-### 已有压缩包
+本库采用 [Agent Skills 开放格式](https://agentskills.io/specification)。从 GitHub 克隆或解压后，把完整的 `skills/visual-prompt-library/` 文件夹放到所用平台的 Skill 目录里，保留 `SKILL.md`、`references/` 和 `assets/`。
 
-解压后把完整的 `visual-prompt-library/` 文件夹放入 `~/.agents/skills/`，供个人跨项目使用。只想在一个项目启用时，放到该项目的 `.agents/skills/`。安装后的结构为 `…/skills/visual-prompt-library/SKILL.md`。更新时用最新版完整文件夹替换旧版。
+| 平台 | 可用的项目目录 | 可用的个人目录 |
+| --- | --- | --- |
+| Codex | `.agents/skills/` | `~/.agents/skills/` |
+| [Claude Code](https://code.claude.com/docs/en/skills) | `.claude/skills/` | `~/.claude/skills/` |
+| [VS Code 的 GitHub Copilot](https://code.visualstudio.com/docs/agent-customization/agent-skills) | `.github/skills/` | `~/.copilot/skills/` |
 
-### 从 GitHub 安装
-
-先用对仓库有读取权限的 GitHub 账号克隆仓库，然后复制仓库里的 Skill 子目录。以下命令用于首次安装。
-
-```bash
-git clone https://github.com/yjn-pj/visual-prompt-library.git
-mkdir -p ~/.agents/skills
-cp -R visual-prompt-library/skills/visual-prompt-library ~/.agents/skills/
-```
-
-在 Codex 侧栏 Skills 查看，或在新对话输入 `$visual-prompt-library`。如果列表没刷新，重启 Codex。生成和编辑使用 Codex 内置 GPT 图片工具，当前工作流无需配置 Gemini 或 API Key。
+安装后按平台的方式调用 `visual-prompt-library`，也可以直接说「用 visual-prompt-library 的 C9 做一张小红书竖封」。支持 Agent Skills 的其他平台可按自己的目录规则安装。直接生成和编辑图片取决于平台可用的图片工具。Codex 可用内置 GPT 图片工具，有其他图片工具的 Agent 可使用其已接入的工具。没有图片工具时，可以让 Agent 输出可复制的提示词，再到出图工具使用。
 
 ## 怎么用
 
 1. 选模板，或让 Skill 根据内容挑选。封面可指定平台、画幅、标题文字和留白位置。
 2. 如需维持真实人物、商品或版式，上传参考并说明每张图的用途。例如「图 1 锁脸，图 2 锁衣服，图 3 参考构图」。
-3. 指定要成图还是提示词。要成图就说「用 GPT 出图」，只要提示词就说「给我可复制的提示词」。
+3. 指定要成图还是提示词。要成图就说「直接出图」，只要提示词就说「给我可复制的提示词」。
 4. 做同一人物或产品的多张图时，沿用同一原始参考。带字版检查字形、数字与裁切；涉及真实信息时提供准确文案。
 
 使用示例：
 
-> `$visual-prompt-library` 用 C7 做公众号封面，标题「我做了一整套咖啡品牌设计」，右侧工作台展板展示我上传的包装、菜单和海报。用 GPT 出图。
+> `$visual-prompt-library` 用 C7 做公众号封面，标题「我做了一整套咖啡品牌设计」，右侧工作台展板展示我上传的包装、菜单和海报。直接出图。
 
 ## 按使用场景选模板
 
