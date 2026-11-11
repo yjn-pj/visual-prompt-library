@@ -1,6 +1,6 @@
 # Visual Prompt Library · Codex 出图模板库
 
-在 Codex 里把视觉参考变成可重复调用的 GPT 图片工作流。包含 **24 套模板**，分别是 7 套封面、11 套人物和 6 套专项视觉。每套下面都有用途、输入要求、可复制指令与成图示例。
+在 Codex 里把视觉参考变成可重复调用的 GPT 图片工作流。收录 **31 套出图模板**。可以按用途找封面、横幅、人像、角色、商品图和手绘故事。每套都有可复制的调用示例。
 
 ## 安装
 
@@ -31,17 +31,25 @@ cp -R visual-prompt-library/skills/visual-prompt-library ~/.agents/skills/
 
 > `$visual-prompt-library` 用 C7 做公众号封面，标题「我做了一整套咖啡品牌设计」，右侧工作台展板展示我上传的包装、菜单和海报。用 GPT 出图。
 
-## 模板导航
+## 按用途选模板
 
-**[封面图](#covers)** · [C1 人物＋标题](#c1) · [C2 照片转手绘](#c2) · [C3 人物＋结果](#c3) · [C4 物件特写](#c4) · [C5 一眼懂的概念图](#c5) · [C6 高密度人物封面](#c6) · [C7 人物＋成果展板](#c7)
+[![31 套视觉模板总览](examples/overview.webp)](examples/overview.webp)
 
-**[人物图](#portraits)** · [P1 职业头像](#p1) · [P2 自然生活抓拍](#p2) · [P3 电影感肖像](#p3) · [P4 复古直闪](#p4) · [P5 真人换装](#p5) · [P6 同一角色多图](#p6) · [P7 超写实动漫聚光特写](#p7) · [P8 黄金时刻双人肖像](#p8) · [P9 东京夜间镜面自拍](#p9) · [P10 带狗街头抓拍](#p10) · [P11 缎面吊带窗边人像](#p11)
-
-**[专项视觉](#specialty)** · [I1 儿童蜡笔旅行日记](#i1) · [E1 电商虚拟模特试穿](#e1) · [E2 3D Q 版微缩品牌店](#e2) · [S1 商品棚拍](#s1) · [S2 卖点信息图](#s2) · [K1 短剧关键帧](#k1)
+| 想做什么 | 适合的场景 | 模板 |
+| --- | --- | --- |
+| [封面先抓眼](#hook) | 文章配图、教程、避坑和社媒封面 | [C1 人物＋标题](#c1) · [C2 照片转手绘](#c2) · [C3 人物＋结果](#c3) · [C5 一眼懂的概念图](#c5) · [C6 高密度人物封面](#c6) · [C7 人物＋成果展板](#c7) · [C8 红描边真人避雷封面](#c8) · [C9 方格纸窗口大字封面](#c9) · [C10 大对白框萌宠封面](#c10) |
+| [账号有门面](#banner) | 欢迎关注、频道介绍和栏目横幅 | [C11 橙白棋盘欢迎横幅](#c11) · [C12 牛皮纸人像工具箱横幅](#c12) |
+| [人像有氛围](#portrait) | 职业头像、日常抓拍和风格写真 | [P1 职业头像](#p1) · [P2 自然生活抓拍](#p2) · [P3 电影感肖像](#p3) · [P4 复古直闪](#p4) · [P8 黄金时刻双人肖像](#p8) · [P9 东京夜间镜面自拍](#p9) · [P10 带狗街头抓拍](#p10) · [P11 缎面吊带窗边人像](#p11) |
+| [换造型做角色](#character) | 真人换装、同角色多图和动漫特写 | [P5 真人换装](#p5) · [P6 同一角色多图](#p6) · [P7 超写实动漫聚光特写](#p7) · [E1 电商虚拟模特试穿](#e1) |
+| [商品有看点](#product) | 测评特写、品牌场景、棚拍和卖点图 | [C4 物件特写](#c4) · [E2 3D Q 版微缩品牌店](#e2) · [S1 商品棚拍](#s1) · [S2 卖点信息图](#s2) |
+| [手绘与故事](#story) | 导览海报、短句便签、旅行手账和短剧镜头 | [H1 彩铅手绘导览](#h1) · [H2 粗笔手写便签](#h2) · [I1 儿童蜡笔旅行日记](#i1) · [K1 短剧关键帧](#k1) |
 
 <a name="covers"></a>
+<a name="hook"></a>
 
-## 封面图
+## 封面先抓眼
+
+文章配图、教程、避坑和社媒封面。
 
 <a name="c1"></a>
 
@@ -79,18 +87,6 @@ cp -R visual-prompt-library/skills/visual-prompt-library ~/.agents/skills/
 
 ![C3 人物＋结果成图示例](examples/c3.webp)
 
-<a name="c4"></a>
-
-### C4 · 物件特写
-
-商品、书籍和工具测评。上传商品图，指定关键材质、承托面、光线和留白方向。
-
-> `$visual-prompt-library` 用 C4 做露营灯测评封面，保留深绿灯身、弧形提手和琥珀灯罩，用侧光，左侧留标题位。
-
-**验图重点** · 商品形状和关键材质清楚，提手完整入画。
-
-![C4 物件特写成图示例](examples/c4.webp)
-
 <a name="c5"></a>
 
 ### C5 · 一眼懂的概念图
@@ -127,9 +123,80 @@ cp -R visual-prompt-library/skills/visual-prompt-library ~/.agents/skills/
 
 ![C7 人物＋成果展板成图示例](examples/c7.webp)
 
-<a name="portraits"></a>
+<a name="c8"></a>
 
-## 人物图
+### C8 · 红描边真人避雷封面
+
+3:4 竖长图。红描边真人配两行白黄大字，适合避坑、误区和经验复盘。
+
+> `$visual-prompt-library` 用 C8 做「装修避雷」封面，第二行写「这4项先问清！」，用原创短发人物和四张黄标签突出报价、加价、材料、验收。
+
+**验图重点** · 人脸和手势完整，黄标签在小图下能读清。
+
+[查看模板规则](skills/visual-prompt-library/references/social-covers.md)
+
+![C8 红描边真人避雷封面成图示例](examples/c8.webp)
+
+<a name="c9"></a>
+
+### C9 · 方格纸窗口大字封面
+
+3:4 竖长图。用圆角方格活页纸、胶带和红色圈线承载纯文字。
+
+> `$visual-prompt-library` 用 C9 做「我发现！整理桌面只需要这三步」，圈出「整理桌面」，结论行加芥末黄底。
+
+**验图重点** · 首行最大，方格退到背景，圈线只标重点。
+
+[查看模板规则](skills/visual-prompt-library/references/social-covers.md)
+
+<a name="c10"></a>
+
+### C10 · 大对白框萌宠封面
+
+3:4 竖长图。大对白框讲方法和结果，下方让萌宠或吉祥物出场。
+
+> `$visual-prompt-library` 用 C10 做「把这三件事写进简历」，让原创三花猫抱着文件夹坐在右下角。
+
+**验图重点** · 对白框尖尾朝向角色，脸和主题道具清楚。
+
+[查看模板规则](skills/visual-prompt-library/references/social-covers.md)
+
+<a name="banner"></a>
+
+## 账号有门面
+
+欢迎关注、频道介绍和栏目横幅。
+
+<a name="c11"></a>
+
+### C11 · 橙白棋盘欢迎横幅
+
+16:9 横长图。用橙白棋盘格框住频道介绍，左文右人。
+
+> `$visual-prompt-library` 用 C11 做美食号欢迎横幅，标题「欢迎来逛」，右侧人物指向左边，橙色飘带写「跟我去吃小店」。
+
+**验图重点** · 按横幅裁切预览，标题、手势和脸完整。
+
+[查看模板规则](skills/visual-prompt-library/references/social-covers.md)
+
+<a name="c12"></a>
+
+### C12 · 牛皮纸人像工具箱横幅
+
+16:9 横长图。牛皮纸和居中人像，两边拆排栏目名和短标签。
+
+> `$visual-prompt-library` 用 C12 做「职场人工具箱」，人物居中，左边写「职场人」，右边写「工具箱」，贴上「简历」「沟通」「效率」。
+
+**验图重点** · 拆开的标题顺着读得通，人像避开关键笔画。
+
+[查看模板规则](skills/visual-prompt-library/references/social-covers.md)
+
+<a name="portraits"></a>
+<a name="portrait"></a>
+
+## 人像有氛围
+
+职业头像、日常抓拍和风格写真。
 
 <a name="p1"></a>
 
@@ -179,42 +246,6 @@ cp -R visual-prompt-library/skills/visual-prompt-library ~/.agents/skills/
 
 ![P4 复古直闪成图示例](examples/p4.webp)
 
-<a name="p5"></a>
-
-### P5 · 真人换装
-
-分别附人脸和衣服参考，或用文字描述新造型。按需指定第三张为姿势参考。
-
-> `$visual-prompt-library` 用 P5 保留参考图中的脸和短发，把衣服换成酒红风衣，在街边自然站立。
-
-**验图重点** · 面部、服装结构和身体比例分别核对。
-
-![P5 真人换装成图示例](examples/p5.webp)
-
-<a name="p6"></a>
-
-### P6 · 同一角色多图
-
-用同一张参考图锁角色；给出每张的动作、景别和机位。样例是并排预览，需独立成图时逐张生成。
-
-> `$visual-prompt-library` 用 P6 把同一位角色做成正面、四分之三侧面和侧脸三格，统一发型、服装与窗光。
-
-**验图重点** · 各张的脸型、发型和辨识特征可对照。
-
-![P6 同一角色多图成图示例](examples/p6.webp)
-
-<a name="p7"></a>
-
-### P7 · 超写实动漫聚光特写
-
-给角色外观和暗部范围，用窄束硬光把注意力集中在脸上。
-
-> `$visual-prompt-library` 用 P7 做黑发动漫角色特写，黑底，窄束硬光打在脸中央，眼睛直视镜头。
-
-**验图重点** · 亮区聚焦，暗部层次清楚，保留动漫造型。
-
-![P7 超写实动漫聚光特写成图示例](examples/p7.webp)
-
 <a name="p8"></a>
 
 ### P8 · 黄金时刻双人肖像
@@ -263,21 +294,47 @@ cp -R visual-prompt-library/skills/visual-prompt-library ~/.agents/skills/
 
 ![P11 缎面吊带窗边人像成图示例](examples/p11.webp)
 
-<a name="specialty"></a>
+<a name="character"></a>
 
-## 专项视觉
+## 换造型做角色
 
-<a name="i1"></a>
+真人换装、同角色多图和动漫特写。
 
-### I1 · 儿童蜡笔旅行日记
+<a name="p5"></a>
 
-提供城市、站点顺序或探店主题。真实地名、店名和行程信息先核对。
+### P5 · 真人换装
 
-> `$visual-prompt-library` 用 I1 做《大同豆面日记》，画逛古城、进面馆、吃豆面，用红色虚线串起来。
+分别附人脸和衣服参考，或用文字描述新造型。按需指定第三张为姿势参考。
 
-**验图重点** · 地名、标签和叙事顺序对应。
+> `$visual-prompt-library` 用 P5 保留参考图中的脸和短发，把衣服换成酒红风衣，在街边自然站立。
 
-![I1 儿童蜡笔旅行日记成图示例](examples/i1.webp)
+**验图重点** · 面部、服装结构和身体比例分别核对。
+
+![P5 真人换装成图示例](examples/p5.webp)
+
+<a name="p6"></a>
+
+### P6 · 同一角色多图
+
+用同一张参考图锁角色；给出每张的动作、景别和机位。样例是并排预览，需独立成图时逐张生成。
+
+> `$visual-prompt-library` 用 P6 把同一位角色做成正面、四分之三侧面和侧脸三格，统一发型、服装与窗光。
+
+**验图重点** · 各张的脸型、发型和辨识特征可对照。
+
+![P6 同一角色多图成图示例](examples/p6.webp)
+
+<a name="p7"></a>
+
+### P7 · 超写实动漫聚光特写
+
+给角色外观和暗部范围，用窄束硬光把注意力集中在脸上。
+
+> `$visual-prompt-library` 用 P7 做黑发动漫角色特写，黑底，窄束硬光打在脸中央，眼睛直视镜头。
+
+**验图重点** · 亮区聚焦，暗部层次清楚，保留动漫造型。
+
+![P7 超写实动漫聚光特写成图示例](examples/p7.webp)
 
 <a name="e1"></a>
 
@@ -292,6 +349,25 @@ cp -R visual-prompt-library/skills/visual-prompt-library ~/.agents/skills/
 样例输入：[服装平铺图](examples/e1-garment.webp) · [虚构模特参考](examples/e1-model.webp)。
 
 ![E1 电商虚拟模特试穿成图示例](examples/e1.webp)
+
+<a name="specialty"></a>
+<a name="product"></a>
+
+## 商品有看点
+
+测评特写、品牌场景、棚拍和卖点图。
+
+<a name="c4"></a>
+
+### C4 · 物件特写
+
+商品、书籍和工具测评。上传商品图，指定关键材质、承托面、光线和留白方向。
+
+> `$visual-prompt-library` 用 C4 做露营灯测评封面，保留深绿灯身、弧形提手和琥珀灯罩，用侧光，左侧留标题位。
+
+**验图重点** · 商品形状和关键材质清楚，提手完整入画。
+
+![C4 物件特写成图示例](examples/c4.webp)
 
 <a name="e2"></a>
 
@@ -329,6 +405,52 @@ cp -R visual-prompt-library/skills/visual-prompt-library ~/.agents/skills/
 
 ![S2 卖点信息图成图示例](examples/s2.webp)
 
+<a name="story"></a>
+
+## 手绘与故事
+
+导览海报、短句便签、旅行手账和短剧镜头。
+
+<a name="h1"></a>
+
+### H1 · 彩铅手绘导览
+
+4:5 竖版起步。两位彩铅小主持人引导读者看一整块目录展板。
+
+> `$visual-prompt-library` 用 H1 做「新手剪辑工具箱」，给我排三组工具，右上和左下各画一位小主持人。
+
+**验图重点** · 分组数量与条目对应，角色和对白不盖编号。
+
+[查看模板规则](skills/visual-prompt-library/references/handdrawn-posters.md)
+
+![H1 彩铅手绘导览成图示例](skills/visual-prompt-library/assets/poster-pencil-guide.jpg)
+
+<a name="h2"></a>
+
+### H2 · 粗笔手写便签
+
+3:4 竖版。粗笔手写字、橙色圈线和黄色勾选清单，适合短句海报。
+
+> `$visual-prompt-library` 用 H2 做「学会管理时间」，圈出「时间」，左边画小狐狸拨计时器，右边放三条行动。
+
+**验图重点** · 逐字核对标题、清单、收尾句和圈线位置。
+
+[查看模板规则](skills/visual-prompt-library/references/handdrawn-posters.md)
+
+![H2 粗笔手写便签成图示例](examples/h2.webp)
+
+<a name="i1"></a>
+
+### I1 · 儿童蜡笔旅行日记
+
+提供城市、站点顺序或探店主题。真实地名、店名和行程信息先核对。
+
+> `$visual-prompt-library` 用 I1 做《大同豆面日记》，画逛古城、进面馆、吃豆面，用红色虚线串起来。
+
+**验图重点** · 地名、标签和叙事顺序对应。
+
+![I1 儿童蜡笔旅行日记成图示例](examples/i1.webp)
+
 <a name="k1"></a>
 
 ### K1 · 短剧关键帧
@@ -344,8 +466,8 @@ cp -R visual-prompt-library/skills/visual-prompt-library ~/.agents/skills/
 ## 文件结构
 
 - [Skill 入口](skills/visual-prompt-library/SKILL.md)
-- [封面模板](skills/visual-prompt-library/references/covers.md) · [人物模板](skills/visual-prompt-library/references/portraits.md) · [旅行与电商模板](skills/visual-prompt-library/references/specialty-visuals.md) · [通用案例索引](skills/visual-prompt-library/references/recipes.md)
-- `skills/visual-prompt-library/assets/` 保存用户给的 C6、C7 构图参考。
+- [封面模板](skills/visual-prompt-library/references/covers.md) · [社媒封面与横幅](skills/visual-prompt-library/references/social-covers.md) · [手绘海报](skills/visual-prompt-library/references/handdrawn-posters.md) · [人物模板](skills/visual-prompt-library/references/portraits.md) · [旅行与电商模板](skills/visual-prompt-library/references/specialty-visuals.md) · [通用案例索引](skills/visual-prompt-library/references/recipes.md)
+- `skills/visual-prompt-library/assets/` 保存 C6、C7 构图参考和 H1、H2 的原创样图。
 - `examples/` 保存生成示例的网页预览。S1、S2 和 K1 是本页的导航编号，调用时可直接说模板名称。
 
 ## 来源与使用范围
