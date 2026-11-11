@@ -2,6 +2,8 @@
 
 把视觉参考变成可复用的图片提示词和出图流程。收录 **31 套出图模板**。按自媒体内容、个人形象、电商与品牌、插画与短剧查找。自媒体进一步细分为小红书竖封、公众号／视频封面和账号横幅。每套都有可复制的调用示例。
 
+[快速安装 Skill](#安装-skill) · [按使用场景选模板](#按使用场景选模板)
+
 ## 怎么用
 
 1. **按场景挑一个编号。** 例如小红书避坑封面选 C8，方格纸大字封面选 C9，账号欢迎横幅选 C11。
@@ -14,7 +16,7 @@
 
 **在豆包里**
 
-把完整提示词粘贴到 [豆包的图片生成入口](https://www.doubao.com/chat/create-image)。也可以直接复制这条示例，换掉主题和标题就能用。
+用豆包工作时，可以[先安装 Skill](#豆包工作对话式安装)，装好后直接说模板编号和主题。只想试做一张，也可以把完整提示词粘贴到 [豆包的图片生成入口](https://www.doubao.com/chat/create-image)。也可以直接复制这条示例，换掉主题和标题就能用。
 
 > 做一张 3:4 竖版小红书封面。背景是一张暖灰桌面，中央放白色圆角方格纸，左上贴一段斜着的芥末黄胶带。用黑色超粗字写「整理桌面只要三步」，红笔圈出「整理桌面」。底部用黄色高亮托住小标题「先从清空开始」。只保留这两处文字。
 
@@ -25,14 +27,38 @@
 
 ## 安装 Skill
 
-本库采用 [Agent Skills 开放格式](https://agentskills.io/specification)。下载或克隆仓库后，把完整的 `skills/visual-prompt-library/` 文件夹放到平台对应的目录里，保留 `SKILL.md`、`references/` 和 `assets/`。
+### 豆包工作对话式安装
+
+在豆包电脑版进入「工作」，打开「技能」管理入口，选择对话新建技能或对话式安装。把下面这段发给豆包，并按客户端提示完成安装。[豆包工作技能说明](https://www.feishu.cn/content/article/7677519271848610746)
+
+```text
+请帮我安装 Visual Prompt Library（visual-prompt-library）这个 Skill：
+https://github.com/yjn-pj/visual-prompt-library/tree/main/skills/visual-prompt-library
+请使用完整的技能目录，保留 SKILL.md、references/ 和 assets/。安装后告诉我在哪里查看。
+```
+
+**手动导入。** 如果客户端无法直接从 GitHub 读取，先[下载仓库 ZIP](https://github.com/yjn-pj/visual-prompt-library/archive/refs/heads/main.zip)并解压。在豆包工作的「技能」管理里选择「导入本地技能文件」，按提示选择解压后的 `skills/visual-prompt-library/` 文件夹。如果入口要求 ZIP，就单独压缩这个技能文件夹后上传。
+
+在技能列表确认出现 `visual-prompt-library` 后，可以用这句话试一下：
+
+> 用 visual-prompt-library 的 C9，给我做一张「整理桌面只要三步」的 3:4 小红书封面提示词。
+
+### Codex 和 Claude Code 对话式安装
+
+在新对话里把下面这段发给 Agent。安装位置按你所用平台和授权提示选择。
+
+```text
+请把这个 Skill 安装到当前项目：
+https://github.com/yjn-pj/visual-prompt-library/tree/main/skills/visual-prompt-library
+请复制完整的技能目录到当前 Agent 的项目技能目录，并检查 SKILL.md 能否被识别。
+```
+
+也可以手动复制完整的 `skills/visual-prompt-library/` 文件夹。本库采用 [Agent Skills 开放格式](https://agentskills.io/specification)，保留 `SKILL.md`、`references/` 和 `assets/`。
 
 | 平台 | 项目目录 | 个人目录 |
 | --- | --- | --- |
 | Codex | `.agents/skills/` | `~/.agents/skills/` |
 | [Claude Code](https://code.claude.com/docs/en/skills) | `.claude/skills/` | `~/.claude/skills/` |
-
-其他支持 Agent Skills 的平台可按自己的目录规则安装。豆包也可以直接复用提示词，这种用法无需安装 Skill。
 
 ## 按使用场景选模板
 
