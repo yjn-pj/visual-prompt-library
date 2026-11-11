@@ -2,28 +2,37 @@
 
 把视觉参考变成可复用的图片提示词和出图流程。收录 **31 套出图模板**。按自媒体内容、个人形象、电商与品牌、插画与短剧查找。自媒体进一步细分为小红书竖封、公众号／视频封面和账号横幅。每套都有可复制的调用示例。
 
-## 安装
+## 怎么用
 
-本库采用 [Agent Skills 开放格式](https://agentskills.io/specification)。从 GitHub 克隆或解压后，把完整的 `skills/visual-prompt-library/` 文件夹放到所用平台的 Skill 目录里，保留 `SKILL.md`、`references/` 和 `assets/`。
+1. **按场景挑一个编号。** 例如小红书避坑封面选 C8，方格纸大字封面选 C9，账号欢迎横幅选 C11。
+2. **换成自己的内容。** 把主题、标题原文、画幅和参考图交给 Agent。附多张图时，说明哪张参考人物、哪张参考构图。
+3. **出图或复制提示词。** Agent 已接入图片工具时可以直接出图。也可以让它给出完整提示词，复制到豆包等出图工具。带字版出图后逐字检查。
 
-| 平台 | 可用的项目目录 | 可用的个人目录 |
+**在支持 Skill 的 Agent 里**
+
+> 用 visual-prompt-library 的 C9 做一张 3:4 小红书竖封，主题是桌面收纳，标题写「整理桌面只要三步」。先给我可复制的出图提示词。
+
+**在豆包里**
+
+把完整提示词粘贴到 [豆包的图片生成入口](https://www.doubao.com/chat/create-image)。也可以直接复制这条示例，换掉主题和标题就能用。
+
+> 做一张 3:4 竖版小红书封面。背景是一张暖灰桌面，中央放白色圆角方格纸，左上贴一段斜着的芥末黄胶带。用黑色超粗字写「整理桌面只要三步」，红笔圈出「整理桌面」。底部用黄色高亮托住小标题「先从清空开始」。只保留这两处文字。
+
+## 出图模型怎么选
+
+- **用 Codex 或 ChatGPT 出图**，直接用内置图片工具。自己接 API 时，带字封面、复杂版式或局部改图可优先选 **GPT-Image-2.6 Sunburst**。[OpenAI 图片模型指南](https://developers.openai.com/api/docs/guides/image-prompting)
+- **用豆包出图**，用界面提供的图片生成功能即可。自己接火山方舟 API 时，普通封面和插画可以从 **Seedream 5.0 Lite** 开始，指定区域改图可选 **Seedream 5.0 Pro**。[火山方舟图片生成指南](https://console.volcengine.com/ark/region:cn-beijing/docs/image-generation-tutorial)
+
+## 安装 Skill
+
+本库采用 [Agent Skills 开放格式](https://agentskills.io/specification)。下载或克隆仓库后，把完整的 `skills/visual-prompt-library/` 文件夹放到平台对应的目录里，保留 `SKILL.md`、`references/` 和 `assets/`。
+
+| 平台 | 项目目录 | 个人目录 |
 | --- | --- | --- |
 | Codex | `.agents/skills/` | `~/.agents/skills/` |
 | [Claude Code](https://code.claude.com/docs/en/skills) | `.claude/skills/` | `~/.claude/skills/` |
-| [VS Code 的 GitHub Copilot](https://code.visualstudio.com/docs/agent-customization/agent-skills) | `.github/skills/` | `~/.copilot/skills/` |
 
-安装后按平台的方式调用 `visual-prompt-library`，也可以直接说「用 visual-prompt-library 的 C9 做一张小红书竖封」。支持 Agent Skills 的其他平台可按自己的目录规则安装。直接生成和编辑图片取决于平台可用的图片工具。Codex 可用内置 GPT 图片工具，有其他图片工具的 Agent 可使用其已接入的工具。没有图片工具时，可以让 Agent 输出可复制的提示词，再到出图工具使用。
-
-## 怎么用
-
-1. 选模板，或让 Skill 根据内容挑选。封面可指定平台、画幅、标题文字和留白位置。
-2. 如需维持真实人物、商品或版式，上传参考并说明每张图的用途。例如「图 1 锁脸，图 2 锁衣服，图 3 参考构图」。
-3. 指定要成图还是提示词。要成图就说「直接出图」，只要提示词就说「给我可复制的提示词」。
-4. 做同一人物或产品的多张图时，沿用同一原始参考。带字版检查字形、数字与裁切；涉及真实信息时提供准确文案。
-
-使用示例：
-
-> `$visual-prompt-library` 用 C7 做公众号封面，标题「我做了一整套咖啡品牌设计」，右侧工作台展板展示我上传的包装、菜单和海报。直接出图。
+其他支持 Agent Skills 的平台可按自己的目录规则安装。豆包也可以直接复用提示词，这种用法无需安装 Skill。
 
 ## 按使用场景选模板
 
@@ -58,8 +67,6 @@
 
 **验图重点** · 人脸和手势完整，黄标签在小图下能读清。
 
-[查看模板规则](skills/visual-prompt-library/references/social-covers.md)
-
 ![C8 红描边真人避雷封面成图示例](examples/c8.webp)
 
 <a name="c9"></a>
@@ -72,8 +79,6 @@
 
 **验图重点** · 首行最大，方格退到背景，圈线只标重点。
 
-[查看模板规则](skills/visual-prompt-library/references/social-covers.md)
-
 ![C9 整理桌面只要三步成图示例](examples/c9.webp)
 
 <a name="c10"></a>
@@ -85,8 +90,6 @@
 > `$visual-prompt-library` 用 C10 做「早餐提前备」竖版封面，右下角让穿格纹围裙的橘猫捧燕麦杯，左侧写「燕麦杯」「水果盒」。
 
 **验图重点** · 对白框尖尾朝向角色，脸和主题道具清楚。
-
-[查看模板规则](skills/visual-prompt-library/references/social-covers.md)
 
 ![C10 早餐提前备成图示例](examples/c10.webp)
 
@@ -181,8 +184,6 @@
 
 **验图重点** · 按横幅裁切预览，标题、手势和脸完整。
 
-[查看模板规则](skills/visual-prompt-library/references/social-covers.md)
-
 ![C11 周末去逛逛成图示例](examples/c11.webp)
 
 <a name="c12"></a>
@@ -194,8 +195,6 @@
 > `$visual-prompt-library` 用 C12 做「新手剪辑工具箱」横幅，人物居中，左右拆排标题，贴上「素材整理」「节奏卡点」「字幕排版」。
 
 **验图重点** · 拆开的标题顺着读得通，人像避开关键笔画。
-
-[查看模板规则](skills/visual-prompt-library/references/social-covers.md)
 
 ![C12 新手剪辑工具箱成图示例](examples/c12.webp)
 
@@ -397,8 +396,6 @@
 
 **验图重点** · 分组数量与条目对应，角色和对白不盖编号。
 
-[查看模板规则](skills/visual-prompt-library/references/handdrawn-posters.md)
-
 ![H1 彩铅手绘导览成图示例](skills/visual-prompt-library/assets/poster-pencil-guide.jpg)
 
 <a name="h2"></a>
@@ -410,8 +407,6 @@
 > `$visual-prompt-library` 用 H2 做「学会管理时间」，圈出「时间」，左边画小狐狸拨计时器，右边放三条行动。
 
 **验图重点** · 逐字核对标题、清单、收尾句和圈线位置。
-
-[查看模板规则](skills/visual-prompt-library/references/handdrawn-posters.md)
 
 ![H2 粗笔手写便签成图示例](examples/h2.webp)
 
@@ -472,7 +467,7 @@
 
 ## 来源与使用范围
 
-Skill 的流程和模板是针对 GPT 图片工具重新编写的。两个上游社区库的案例链接保留在各模板旁。用户提供的 C6、C7 图片用于构图参考，示例图是 AI 生成样稿。使用真实人物、品牌素材或第三方案例前，按对应素材的授权范围使用。
+Skill 的流程和提示词是针对 AI 出图重新编写的。两个上游社区库的案例链接保留在各模板旁。用户提供的 C6、C7 图片用于构图参考，示例图是 AI 生成样稿。使用真实人物、品牌素材或第三方案例前，按对应素材的授权范围使用。
 
 - [YouMind OpenLab 案例库](https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts) · [上游 CC BY 4.0 声明](https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts/blob/main/LICENSE)
 - [ZeroLu 案例库](https://github.com/ZeroLu/awesome-nanobanana-pro) · [上游 MIT 声明](https://github.com/ZeroLu/awesome-nanobanana-pro/blob/main/LICENSE)
